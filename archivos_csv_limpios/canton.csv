@@ -1,0 +1,226 @@
+id_canton,nom_canton,Provincia_id_provincia
+101,Cuenca,1
+102,Giron,1
+103,Gualaceo,1
+104,Nabon,1
+105,Paute,1
+106,Pucara,1
+107,San Fernando,1
+108,Santa Isabel,1
+109,Sigsig,1
+110,OÃ±a,1
+111,Chordeleg,1
+112,El Pan,1
+113,Sevilla de Oro,1
+114,Guachapala,1
+115,Camilo Ponce Enriquez,1
+201,Guaranda,2
+202,Chillanes,2
+203,Chimbo,2
+204,Echeandia,2
+205,San Miguel,2
+206,Caluma,2
+207,Las Naves,2
+301,Azogues,3
+302,Biblian,3
+303,CaÃ±ar,3
+304,La Troncal,3
+305,El Tambo,3
+306,Deleg,3
+307,Suscal,3
+401,Tulcan,4
+402,Bolivar,4
+403,Espejo,4
+404,Mira,4
+405,Montufar,4
+406,San Pedro de Huaca,4
+501,Latacunga,5
+502,La Mana,5
+503,Pangua,5
+504,Pujili,5
+505,Salcedo,5
+506,Saquisili,5
+507,Sigchos,5
+601,Riobamba,6
+602,Alausi,6
+603,Colta,6
+604,Chambo,6
+605,Chunchi,6
+606,Guamote,6
+607,Guano,6
+608,Pallatanga,6
+609,Penipe,6
+610,Cumanda,6
+701,Machala,7
+702,Arenillas,7
+703,Atahualpa,7
+704,Balsas,7
+705,Chilla,7
+706,El Guabo,7
+707,Huaquillas,7
+708,Marcabeli,7
+709,Pasaje,7
+710,PiÃ±as,7
+711,Portovelo,7
+712,Santa Rosa,7
+713,Zaruma,7
+714,Las Lajas,7
+801,Esmeraldas,8
+802,Eloy Alfaro,8
+803,Muisne,8
+804,Quininde,8
+805,San Lorenzo,8
+806,Atacames,8
+807,Rioverde,8
+808,La Concordia,8
+901,Guayaquil,9
+902,Alfredo Baquerizo Moreno,9
+903,Balao,9
+904,Balzar,9
+905,Colimes,9
+906,Daule,9
+907,Duran,9
+908,El Empalme,9
+909,El Triunfo,9
+910,Milagro,9
+911,Naranjal,9
+912,Naranjito,9
+913,Palestina,9
+914,Pedro Carbo,9
+916,Samborondon,9
+918,Santa Lucia,9
+919,Urbina Jado,9
+920,Yaguachi,9
+921,Playas,9
+922,SimÃ³n Bolivar,9
+923,Coronel Marcelino MaridueÃ±a,9
+924,Lomas De Sargentillo,9
+925,Nobol,9
+927,General Antonio Elizalde,9
+928,Isidro Ayora,9
+1001,Ibarra,10
+1002,Antonio Ante,10
+1003,Cotacachi,10
+1004,Otavalo,10
+1005,Pimampiro,10
+1006,San Miguel de Urcuqui,10
+1101,Loja,11
+1102,Calvas,11
+1103,Catamayo,11
+1104,Celica,11
+1105,Chaguarpamba,11
+1106,Espindola,11
+1107,Gonzanama,11
+1108,Macara,11
+1109,Paltas,11
+1110,Puyango,11
+1111,Saraguro,11
+1112,Sozoranga,11
+1113,Zapotillo,11
+1114,Pindal,11
+1115,Quilanga,11
+1116,Olmedo,11
+1201,Babahoyo,12
+1202,Baba,12
+1203,Montalvo,12
+1204,Puebloviejo,12
+1205,Quevedo,12
+1206,Urdaneta,12
+1207,Ventanas,12
+1208,Vinces,12
+1209,Palenque,12
+1210,Buena Fe,12
+1211,Valencia,12
+1212,Mocache,12
+1213,Quinsaloma,12
+1301,Portoviejo,13
+1302,Bolivar,13
+1303,Chone,13
+1304,El Carmen,13
+1305,Flavio Alfaro,13
+1306,Jipijapa,13
+1307,Junin,13
+1308,Manta,13
+1309,Montecristi,13
+1310,Pajan,13
+1311,Pichincha,13
+1312,Rocafuerte,13
+1313,Santa Ana,13
+1314,Sucre,13
+1315,Tosagua,13
+1316,24 De Mayo,13
+1317,Pedernales,13
+1318,Olmedo,13
+1319,Puerto Lopez,13
+1320,Jama,13
+1321,Jaramijo,13
+1322,San Vicente,13
+1401,Morona,14
+1402,Gualaquiza,14
+1403,Limon Indanza,14
+1404,Palora,14
+1405,Santiago,14
+1406,Sucua,14
+1407,Huamboya,14
+1408,San Juan Bosco,14
+1409,Taisha,14
+1410,LogroÃ±o,14
+1411,Pablo Vi,14
+1412,Tiwintza,14
+1501,Tena,15
+1503,Archidona,15
+1504,El Chaco,15
+1507,Quijos,15
+1509,Carlos Julio Arosemena,15
+1601,Pastaza,16
+1602,Mera,16
+1603,Santa Clara,16
+1604,Arajuno,16
+1701,Quito,17
+1702,Cayambe,17
+1703,Mejia,17
+1704,Pedro Moncayo,17
+1705,RumiÃ±ahui,17
+1707,San Miguel de Los Bancos,17
+1708,Pedro Vicente Maldonado,17
+1709,Puerto Quito,17
+1801,Ambato,18
+1802,BaÃ±os,18
+1803,Cevallos,18
+1804,Mocha,18
+1805,Patate,18
+1806,Quero,18
+1807,San Pedro de Pelileo,18
+1808,Santiago de Pillaro,18
+1809,Tisaleo,18
+1901,Zamora,19
+1902,Chinchipe,19
+1903,Nangaritza,19
+1904,Yacuambi,19
+1905,Yantzaza,19
+1906,El Pangui,19
+1907,Centinela del Condor,19
+1908,Palanda,19
+1909,Paquisha,19
+2001,San Cristobal,20
+2002,Isabela,20
+2003,Santa Cruz,20
+2101,Lago Agrio,21
+2102,Gonzalo Pizarro,21
+2103,Putumayo,21
+2104,Shushufindi,21
+2105,SucumbÃ­os,21
+2106,Cascales,21
+2107,Cuyabeno,21
+2201,Orellana,22
+2202,Aguarico,22
+2203,La Joya de Los Sachas,22
+2204,Loreto,22
+2301,Santo Domingo,23
+2302,LA CONCORDIA,23
+2401,Santa Elena,24
+2402,Libertad,24
+2403,Salinas,24
+9001,Las Golondrinas,90
+9003,El Piedrero,90
+9004,Manga Del Cura,90
