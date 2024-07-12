@@ -1,6 +1,6 @@
 class HeaderComponent extends HTMLElement {
     connectedCallback() {
-        fetch('header/header.html')
+        fetch('componentes_html/header.html')
             .then(response => response.text())
             .then(data => {
                 this.innerHTML = data;
