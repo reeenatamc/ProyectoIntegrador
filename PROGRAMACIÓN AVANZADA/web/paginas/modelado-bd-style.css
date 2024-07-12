@@ -1,0 +1,29 @@
+.img-contenedor {
+    position: relative;
+    width: auto;
+    height: 400px;
+    overflow: hidden;
+    border: 10px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.img-contenedor img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.zoom-buttons {
+    margin-top: 10px;
+}
+
+.zoom-buttons button {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+
+
+
+
