@@ -1,0 +1,26 @@
+.cell {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.play-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.play-button:hover {
+    background-color: #45a049;
+}
+.output {
+    margin-top: 20px;
+}
+.output img {
+    max-width: 100%;
+}

@@ -1,4 +1,4 @@
-var csvFilePath = 'archivos/tablas_analisis.csv';
+var csvFilePath = 'archivos/csv/tablas_analisis.csv';
 Papa.parse(csvFilePath, {
     download: true,
     complete: function (results) {
