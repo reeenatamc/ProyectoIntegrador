@@ -180,3 +180,22 @@ h1 {
 		opacity:1;
 	}
 }
+
+
+
+/* Agregados */
+.data-analysis {
+    width: 800px; 
+    height: 300px; 
+    overflow-y: auto; 
+    border: 1px solid #ccc;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc #000000; 
+}
+
+.analysis-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+}

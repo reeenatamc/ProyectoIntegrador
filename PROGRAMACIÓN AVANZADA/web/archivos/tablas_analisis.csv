@@ -1,0 +1,39 @@
+﻿Nombre del dato,Descripción,Tipo de dato,Año
+edad,Edad del detenido.,Int,2016 – 2024
+sexo,Sexo del detenido/a.,Cadena/String,2016 – 2024
+genero,Género del detenido/a.,Cadena/String,2023 – 2024
+nacionalidad,Procedencia del detenido/a.,Cadena/String,2016 – 2024
+estado_civil,Estado civil del detenido/a.,Cadena/String,2023 – 2024
+nivel_instruccion,Nivel de educación del detenido/a.,Cadena/String,2023 – 2024
+estatus_migratorio,Estatus migratorio del detenido/a.,Cadena/String,2023 – 2024
+num_detenciones,Número total de detenciones del detenido.,Int,2022 – 2024
+autoidentificacion_etnica,Autoidentificación étnica del detenido/a.,Cadena/String,2022 – 2024
+codigo_iccs,Número de serie o identificador único e internacional que aparece en la tarjeta SIM del detenido/a.,Cadena/String,2023 – 2024
+fecha_detencion,Fecha en la que ocurrió la aprehensión/detención.,Date,2016 – 2024
+hora_detencion,Hora en la que ocurrió la aprehensión/detención.,Time,2022 – 2024
+tipo,Indica si la persona es aprehendida/detenida.,Cadena/String,2022 – 2024
+condicion,Estado del aprehendido/detenido.,Cadena/String,2023 – 2024
+movilizacion,Indica cómo se transportaba la persona en el momento de la aprehensión/detención.,Cadena/String,2023 – 2024
+presunta_flagrancia,Si se encontró flagrantemente al aprehendido/detenido.,Cadena/String,2022 – 2024
+presunta_modalidad,Indica la forma en la que la persona cometió la infracción o la ley que incumplió.,Cadena/String,2023 – 2024
+flagrante_boleta,Indica si la aprehensión/detención de la persona es de tipo flagrante o boleta.,Cadena/String,2016 – 2018
+arma,Indica el arma que se usó para cometer el crimen.,Cadena/String,2023 – 2024
+tipo_arma,Indica de qué tipo es el arma que se usó para cometer el crimen.,Cadena/String,2023 – 2024
+infraccion,Indica la infracción que se cometió de forma general.,Cadena/String,2022 – 2024
+subinfraccion ,Indica la sub-infracción de forma más detallada.,Cadena/String,2016 – 2024
+codigo_provincia,Describe el código de la provincia donde ocurrió la detención/aprehensión.,Int,2023 – 2024
+nombre_provincia,Describe el nombre de la provincia donde ocurrió la detención/aprehensión.,Cadena/String,2022 – 2024
+codigo_canton,Describe el código del cantón donde ocurrió la detención/aprehensión.,Cadena/String,2023 – 2024
+nombre_canton,Describe el nombre del cantón donde ocurrió la detención/aprehensión.,Cadena/String,2016 – 2024
+codigo_parroquia,Describe el código de la parroquia donde ocurrió la detención/aprehensión.,Cadena/String,2023 – 2024
+nombre_parroquia,Describe el nombre de la parroquia donde ocurrió la detención/aprehensión.,Cadena/String,2022 – 2024
+nombre_zona,Describe el nombre de la zona donde ocurrió la detención/aprehensión.,Cadena/String,2016 – 2024
+nombre_subzona,Describe el nombre de la subzona donde ocurrió la detención/aprehensión.,Cadena/String,2016 – 2024
+codigo_distrito,Describe el código del distrito donde ocurrió la detención/aprehensión.,Cadena/String,2022 – 2024
+nombre_distrito,Describe el nombre del distrito donde ocurrió la detención/aprehensión.,Cadena/String,2022 – 2024
+codigo_circuito,Describe el código del circuito donde ocurrió la detención/aprehensión.,Cadena/String,2022 – 2024
+nombre_circuito,Describe el nombre del circuito donde ocurrió la detención/aprehensión.,Cadena/String,2022 – 2024
+codigo_subcircuito,Describe el código del subcircuito donde ocurrió la detención/aprehensión.,Cadena/String,2022 – 2024
+nombre_subcircuito,Describe el nombre del subcircuito donde ocurrió la detención/aprehensión.,Cadena/String,2022 – 2024
+lugar,Describe el lugar donde ocurrió la detención/aprehensión de forma más específica.,Cadena/String,2022 – 2024
+tipo_lugar,Clasifica el lugar donde ocurrió la detención/aprehensión de forma más específica.,Cadena/String,2023 – 2024
