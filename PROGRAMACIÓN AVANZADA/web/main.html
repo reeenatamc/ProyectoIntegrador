@@ -95,45 +95,57 @@
                 <h2>Consulta sobre los Datos</h2>
                 <div style="text-align: center;">
                     <div style="border: 1px solid #ccc; padding: 10px; background-color: #f0f0f0; display: inline-block; text-align: left;">
-                        Realizar consultas en la base de datos MySQL para:
-                        <ul style="list-style-position: inside;">
-                            <li>Análisis de tendencias.</li>
-                            <li>Análisis geográfico.</li>
-                            <li>Análisis demográfico.</li>
-                            <li>Análisis de correlación.</li>
-                        </ul>
+                        Aquí encontrará las Consultas de
                     </div>
                 </div>
-
+            
                 <div class="analysis-content">
-                    <h2>Analisis de tendencias</h2>
+                    <h2>Consulta SQL</h2>
+                    <div style="border: 2px solid #007BFF; border-radius: 5px; background-color: #E7F3FF; padding: 15px; color: #0056b3; font-family: monospace;">
+                        <pre>
+            %mysql
+            SELECT 
+                prov.nom_provincia AS provincia_o_zona,
+                prov.media_tasa_pobreza_extrema,
+                det.subinfraccion,
+                COUNT(subinfracciones.subinfraccion) AS num_ocurrencias
+            FROM
+                detenido de
+                JOIN
+                    detencion det ON de.id = det.Detenido_id
+                JOIN
+                    subcircuito sub ON det.Subcircuito_id_subcircuito = sub.id_subcircuito
+                JOIN
+                    circuito cir ON sub.Circuito_id_circuito = cir.id_circuito
+                JOIN
+                    distrito dis ON cir.Distrito_id_distrito = dis.id_distrito
+                JOIN
+                    zona zon ON dis.Zona_id_zona = zon.id_zona
+                JOIN
+                    provincia prov ON zon.id_zona = prov.zona_id_zona
+                JOIN
+                    (SELECT DISTINCT subinfraccion
+                     FROM detencion) AS subinfracciones ON det.subinfraccion = subinfracciones.subinfraccion
+            WHERE
+                de.sexo = 'MUJER'
+            GROUP BY 
+                prov.nom_provincia, prov.media_tasa_pobreza_extrema, det.subinfraccion
+            ORDER BY 
+                num_ocurrencias DESC;
+                        </pre>
+                    </div>
+                </div>
+            
+                <div class="analysis-content">
+                    <h2>Descripción de la Consulta</h2>
                     <p>
-                        Poner Las consultas y Capturas de las graficas
+                        La consulta SQL selecciona y agrupa datos sobre detenciones de mujeres, incluyendo la provincia, la tasa media de pobreza extrema en esa provincia, el tipo de infracción cometida y la cantidad de veces que ocurrió cada infracción. Para lograr esto, se crean varias uniones (JOIN) entre las tablas "detenido", "detención", "subcircuito", "circuito", "distrito", "zona" y "provincia", además de una subconsulta para enumerar diferentes infracciones. Los resultados se agrupan por provincia, tasa de pobreza extrema y tipo de infracción para incluir solo a mujeres detenidas. Finalmente, los datos se ordenan de manera descendente de acuerdo con la cantidad de infracciones.
                     </p>
                 </div>
+            
 
-                <div class="analysis-content">
-                    <h2>Analisis Gegrafico</h2>
-                    <p>
-                        Poner Las consultas y Capturas de las graficas
-                    </p>
-                </div>
-
-                <div class="analysis-content">
-                    <h2>Analisis Demografico</h2>
-                    <p>
-                        Poner Las consultas y Capturas de las graficas
-                    </p>
-                </div>
-
-                <div class="analysis-content">
-                    <h2>Analisis de Correlacion</h2>
-                    <p>
-                        Poner Las consultas y Capturas de las graficas
-                    </p>
-                </div>
-                
             </div>
+            
 
             <div class="section-content analysis">
                 <h2>Conclusiones y resultados</h2>
