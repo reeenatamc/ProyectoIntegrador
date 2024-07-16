@@ -54,7 +54,7 @@ h1 {
 #progress-bar-container li.active:before, #progress-bar-container li:hover:before {
 	border:solid 2px #fff;
        	 
-	background: linear-gradient(to right, #E91E63 0%,#fff 100%); 
+	background: linear-gradient(to right, #7189e8 0%,#fff 100%); 
 }
 
 #progress-bar-container li {
@@ -198,4 +198,21 @@ h1 {
     flex-direction: column;
     align-items: center; 
     text-align: center;
+}
+
+.imagen {
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+	max-width: 500px;
+	}
+			
+.main-title {
+	font-size: 32px;
+	margin-bottom: 20px;
+	}
+			
+.main-text {
+	font-size: 18px;
+	line-height: 1.5;
 }
