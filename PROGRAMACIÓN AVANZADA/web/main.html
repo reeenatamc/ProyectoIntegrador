@@ -22,7 +22,38 @@
 </head>
 <body>
     <header-component></header-component>
-
+    <head>
+        <title>Violencia y Criminalidad en Ecuador</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                padding: 40px;
+            }
+            img {
+                display: block;
+                margin: 0 auto;
+                width: 50%;
+                max-width: 500px;
+            }
+            h1 {
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+            p {
+                font-size: 18px;
+                line-height: 1.5;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>La violencia y la criminalidad en Ecuador</h1>
+        <p>
+            Están aumentando a un ritmo sin precedentes. No solo se encuentra entre los diez países más violentos del mundo, 
+            sino que también tiene la tasa más alta de muertes violentas en América Latina, con 47,25% por cada 100 000 habitantes, lo que representa ocho veces más que en 2016, cuando experimentó su tasa más baja desde 1980. Durante menos de diez años, ha cambiado de ser el segundo país más seguro de América del Sur, después de Chile, a ser el más violento. (OECO, 2024)
+        </p>
+        <img src="header/images/portadaEcuador.jpg" alt="Imagen relacionada" />
+    </body>
     <h1>Proceso</h1>
     <br>
     <div class="process-wrapper">
@@ -63,6 +94,7 @@
                         <table id="tabla-datos">
 
                         </table>
+                        
                     </div>
                 </div>
                 <div class="analysis-content">
@@ -73,6 +105,51 @@
                         de datos duplicados o irrelevantes, y la garantía de que los datos sean consistentes y estén completos. En nuestro proyecto, que abarca la recopilación y análisis de datos de detenidos desde 2016 hasta 2024, la limpieza de datos es esencial para obtener resultados precisos y fiables.
                     </p>
                 </div>
+                <h2> Descripción de los datos complementarios</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="color: rgb(27, 27, 27);">Nombre del dato</th>
+                            <th style="color: blue;">Descripción</th>
+                            <th style="color: rgb(143, 81, 0);">Tipo de dato</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>media_tasa_educacionbasica_poblacion</td>
+                            <td>Promedio de la tasa de población que ha completado la educación básica.</td>
+                            <td>FLOAT</td>
+                        </tr>
+                        <tr>
+                            <td>media_tasa_educacionbachillerato_poblacion</td>
+                            <td>Promedio de la tasa de población que ha completado el bachillerato.</td>
+                            <td>FLOAT</td>
+                        </tr>
+                        <tr>
+                            <td>media_tasa_empleo_inadecuado</td>
+                            <td>Promedio de la tasa de empleo inadecuado (trabajos que no cumplen con las condiciones mínimas).</td>
+                            <td>FLOAT</td>
+                        </tr>
+                        <tr>
+                            <td>media_tasa_pobreza_extrema</td>
+                            <td>Promedio de la tasa de población que vive en condiciones de pobreza extrema.</td>
+                            <td>FLOAT</td>
+                        </tr>
+                        <tr>
+                            <td>media_indice_dh</td>
+                            <td>Promedio del índice de desarrollo humano (DH).</td>
+                            <td>FLOAT</td>
+                        </tr>
+                        <tr>
+                            <td>media_tasa_narcotrafico</td>
+                            <td>Promedio de los kilogramos de narcóticos incautados.</td>
+                            <td>FLOAT</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                
+                
             </div>
 
             <div class="section-content strategy">
@@ -81,67 +158,314 @@
 
             <div class="section-content creative">
                 <h2>Carga de Datos y CSV</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum
-                    ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
-                    dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor
-                    mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas
-                    volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit
-                    orci.</p>
-
+                <p>Script SQL</p>
                 
-            </div>
+                <div style="border: 2px solid #000000; border-radius: 15px; background-color: #ffffff; padding: 15px; color: #57a3f3; font-family: monospace; text-align: justify;">
+                    <blockquote>
+                        <pre>
+                            -- Crear un nuevo usuario.
+                            CREATE USER 'pi_user'@'localhost' IDENTIFIED BY 'renata15';
+                            
+                            -- Conceder permisos.
+                            GRANT ALL PRIVILEGES ON pi_db.* TO 'pi_user'@'localhost';
+                            
+                            -- Aplicar los cambios
+                            FLUSH PRIVILEGES;
+                            
+                            -- Crear la base de datos y tablas 
+                            CREATE DATABASE IF NOT EXISTS pi_db
+                                DEFAULT CHARACTER SET = utf8mb4
+                                COLLATE = utf8mb4_0900_ai_ci;
+                            
+                            USE pi_db;
+                            
+                            CREATE TABLE IF NOT EXISTS tipo_arma (
+                              id_tipo_arma INT NOT NULL AUTO_INCREMENT,
+                              nom_tipo_arma VARCHAR(45) NULL DEFAULT NULL,
+                              PRIMARY KEY (id_tipo_arma))
+                            ENGINE = InnoDB
+                            AUTO_INCREMENT = 1
+                            DEFAULT CHARACTER SET = utf8mb4
+                            COLLATE = utf8mb4_0900_ai_ci;
+                            
+                            CREATE TABLE IF NOT EXISTS arma (
+                              id_arma INT NOT NULL AUTO_INCREMENT,
+                              arma VARCHAR(45) NULL DEFAULT NULL,
+                              tipo_arma_id_tipo_arma INT NOT NULL,
+                              PRIMARY KEY (id_arma),
+                              INDEX fk_arma_tipo_arma1_idx (tipo_arma_id_tipo_arma ASC) VISIBLE,
+                              CONSTRAINT fk_arma_tipo_arma1
+                                FOREIGN KEY (tipo_arma_id_tipo_arma)
+                                REFERENCES tipo_arma (id_tipo_arma))
+                            ENGINE = InnoDB
+                            AUTO_INCREMENT = 1
+                            DEFAULT CHARACTER SET = utf8mb4
+                            COLLATE = utf8mb4_0900_ai_ci;
+                            
+                            CREATE TABLE IF NOT EXISTS zona (
+                              id_zona INT NOT NULL,
+                              nom_zona VARCHAR(45) NULL DEFAULT NULL,
+                              PRIMARY KEY (id_zona))
+                            ENGINE = InnoDB
+                            DEFAULT CHARACTER SET = utf8mb4
+                            COLLATE = utf8mb4_0900_ai_ci;
+                            
+                            CREATE TABLE IF NOT EXISTS provincia (
+                              id_provincia INT NOT NULL,
+                              nom_provincia VARCHAR(45) NOT NULL,
+                              media_tasa_educacionbasica_poblacion FLOAT NOT NULL,
+                              media_tasa_educacionbachillerato_poblacion FLOAT NOT NULL,
+                              media_tasa_empleo_inadecuado FLOAT NOT NULL,
+                              media_tasa_pobreza_extrema FLOAT NOT NULL,
+                              media_indice_dh FLOAT NOT NULL,
+                              media_tasa_narcotrafico FLOAT NOT NULL,
+                              zona_id_zona INT NOT NULL,
+                              PRIMARY KEY (id_provincia),
+                              INDEX fk_provincia_zona1_idx (zona_id_zona ASC) VISIBLE,
+                              CONSTRAINT fk_provincia_zona1
+                                FOREIGN KEY (zona_id_zona)
+                                REFERENCES zona (id_zona)
+                                ON DELETE NO ACTION
+                                ON UPDATE NO ACTION)
+                            ENGINE = InnoDB
+                            DEFAULT CHARACTER SET = utf8mb4
+                            COLLATE = utf8mb4_0900_ai_ci;
+                            
+                            CREATE TABLE IF NOT EXISTS canton (
+                              id_canton INT NOT NULL,
+                              nom_canton VARCHAR(45) NOT NULL,
+                              Provincia_id_provincia INT NOT NULL,
+                              PRIMARY KEY (id_canton),
+                              INDEX fk_Canton_Provincia1_idx (Provincia_id_provincia ASC) VISIBLE,
+                              CONSTRAINT fk_Canton_Provincia1
+                                FOREIGN KEY (Provincia_id_provincia)
+                                REFERENCES provincia (id_provincia))
+                            ENGINE = InnoDB
+                            DEFAULT CHARACTER SET = utf8mb4
+                            COLLATE = utf8mb4_0900_ai_ci;
+                            
+                            CREATE TABLE IF NOT EXISTS distrito (
+                              id_distrito VARCHAR(45) NOT NULL,
+                              nom_distrito VARCHAR(45) NULL DEFAULT NULL,
+                              Zona_id_zona INT NOT NULL,
+                              PRIMARY KEY (id_distrito),
+                              INDEX fk_Distrito_Zona1_idx (Zona_id_zona ASC) VISIBLE,
+                              CONSTRAINT fk_Distrito_Zona1
+                                FOREIGN KEY (Zona_id_zona)
+                                REFERENCES zona (id_zona))
+                            ENGINE = InnoDB
+                            DEFAULT CHARACTER SET = utf8mb4
+                            COLLATE = utf8mb4_0900_ai_ci;
+                            
+                            CREATE TABLE IF NOT EXISTS circuito (
+                              id_circuito VARCHAR(45) NOT NULL,
+                              nom_circuito VARCHAR(45) NULL DEFAULT NULL,
+                              Distrito_id_distrito VARCHAR(45) NOT NULL,
+                              PRIMARY KEY (id_circuito),
+                              INDEX fk_Circuito_Distrito1_idx (Distrito_id_distrito ASC) VISIBLE,
+                              CONSTRAINT fk_Circuito_Distrito1
+                                FOREIGN KEY (Distrito_id_distrito)
+                                REFERENCES distrito (id_distrito))
+                            ENGINE = InnoDB
+                            DEFAULT CHARACTER SET = utf8mb4
+                            COLLATE = utf8mb4_0900_ai_ci;
+                            
+                            CREATE TABLE IF NOT EXISTS nacionalidad (
+                              id_nacionalidad INT NOT NULL AUTO_INCREMENT,
+                              nombre_nacionalidad VARCHAR(45) NOT NULL,
+                              PRIMARY KEY (id_nacionalidad))
+                            ENGINE = InnoDB
+                            AUTO_INCREMENT = 1
+                            DEFAULT CHARACTER SET = utf8mb4
+                            COLLATE = utf8mb4_0900_ai_ci;
+                            
+                            CREATE TABLE IF NOT EXISTS detenido (
+                              id INT NOT NULL AUTO_INCREMENT,
+                              edad INT NOT NULL,
+                              sexo VARCHAR(45) NULL DEFAULT NULL,
+                              genero VARCHAR(45) NULL DEFAULT NULL,
+                              estado_civil VARCHAR(45) NULL DEFAULT NULL,
+                              nivel_instruccion VARCHAR(45) NULL DEFAULT NULL,
+                              estatus_migratorio VARCHAR(45) NULL DEFAULT NULL,
+                              num_detenciones INT NOT NULL DEFAULT '-1',
+                              autoidentificacion_etnica VARCHAR(45) NULL DEFAULT NULL,
+                              codigo_icc VARCHAR(45) NULL DEFAULT NULL,
+                              Nacionalidad_id_nacionalidad INT NOT NULL,
+                              PRIMARY KEY (id),
+                              INDEX fk_Detenido_Nacionalidad_idx (Nacionalidad_id_nacionalidad ASC) VISIBLE,
+                              CONSTRAINT fk_Detenido_Nacionalidad
+                                FOREIGN KEY (Nacionalidad_id_nacionalidad)
+                                REFERENCES nacionalidad (id_nacionalidad))
+                            ENGINE = InnoDB
+                            AUTO_INCREMENT = 1
+                            DEFAULT CHARACTER SET = utf8mb4
+                            COLLATE = utf8mb4_0900_ai_ci;
+                            
+                            CREATE TABLE IF NOT EXISTS subcircuito (
+                              id_subcircuito VARCHAR(45) NOT NULL,
+                              nom_subcircuito VARCHAR(45) NULL DEFAULT NULL,
+                              Circuito_id_circuito VARCHAR(45) NOT NULL,
+                              PRIMARY KEY (id_subcircuito),
+                              INDEX fk_Subcircuito_Circuito1_idx (Circuito_id_circuito ASC) VISIBLE,
+                              CONSTRAINT fk_Subcircuito_Circuito1
+                                FOREIGN KEY (Circuito_id_circuito)
+                                REFERENCES circuito (id_circuito))
+                            ENGINE = InnoDB
+                            DEFAULT CHARACTER SET = utf8mb4
+                            COLLATE = utf8mb4_0900_ai_ci;
+                            
+                            CREATE TABLE IF NOT EXISTS detencion (
+                              id_detencion INT NOT NULL AUTO_INCREMENT,
+                              fecha_detencion DATE NULL DEFAULT NULL,
+                              hora_detencion TIME NULL DEFAULT NULL,
+                              tipo VARCHAR(45) NOT NULL DEFAULT 'SIN DATO',
+                              condicion TEXT NULL DEFAULT NULL,
+                              movilizacion TEXT NULL DEFAULT NULL,
+                              presunta_flagrancia VARCHAR(45) NOT NULL DEFAULT 'SIN DATO',
+                              presunta_modalidad TEXT NULL DEFAULT NULL,
+                              flagrante_boleta VARCHAR(45) NOT NULL DEFAULT 'SIN DATO',
+                              lugar TEXT NULL DEFAULT NULL,
+                              tipo_lugar TEXT NULL DEFAULT NULL,
+                              infraccion TEXT NULL DEFAULT NULL,
+                              subinfraccion TEXT NULL DEFAULT NULL,
+                              anio VARCHAR(45) NULL DEFAULT NULL,
+                              Detenido_id INT NOT NULL,
+                              arma_id_arma INT NOT NULL,
+                              Subcircuito_id_subcircuito VARCHAR(45) NOT NULL,
+                              PRIMARY KEY (id_detencion),
+                              INDEX fk_Detencion_Detenido1_idx (Detenido_id ASC) VISIBLE,
+                              INDEX fk_Detencion_arma1_idx (arma_id_arma ASC) VISIBLE,
+                              INDEX fk_Detencion_Subcircuito1_idx (Subcircuito_id_subcircuito ASC) VISIBLE,
+                              CONSTRAINT fk_Detencion_arma1
+                                FOREIGN KEY (arma_id_arma)
+                                REFERENCES arma (id_arma),
+                              CONSTRAINT fk_Detencion_Detenido1
+                                FOREIGN KEY (Detenido_id)
+                                REFERENCES detenido (id),
+                              CONSTRAINT fk_Detencion_Subcircuito1
+                                FOREIGN KEY (Subcircuito_id_subcircuito)
+                                REFERENCES subcircuito (id_subcircuito)),
+                              CONSTRAINT tipo_restrict
+                                CHECK (tipo IN ('DETENIDO', 'APREHENDIDO', 'SIN DATO')),
+                              CONSTRAINT flagrante_boleta_restrict
+                                CHECK (flagrante_boleta IN ('FLAGRANTE', 'BOLETA', 'SIN DATO')),
+                              CONSTRAINT presunta_flagrancia_restrict
+                                CHECK (presunta_flagrancia IN ('SI', 'NO', 'SIN DATO'))
+                            ENGINE = InnoDB
+                            DEFAULT CHARACTER SET = utf8mb4
+                            COLLATE = utf8mb4_0900_ai_ci;
+                            
+                            CREATE TABLE IF NOT EXISTS parroquia (
+                              id_parroquia INT NOT NULL AUTO_INCREMENT,
+                              nom_parroquia VARCHAR(80) NULL DEFAULT NULL,
+                              Canton_id_canton INT NOT NULL,
+                              PRIMARY KEY (id_parroquia),
+                              INDEX fk_Parroquia_Canton1_idx (Canton_id_canton ASC) VISIBLE,
+                              CONSTRAINT fk_Parroquia_Canton1
+                                FOREIGN KEY (Canton_id_canton)
+                                REFERENCES canton (id_canton))
+                            ENGINE = InnoDB
+                            DEFAULT CHARACTER SET = utf8mb4
+                            COLLATE = utf8mb4_0900_ai_ci;
+                            
+                            ALTER TABLE detenido
+                              MODIFY COLUMN num_detenciones INT NOT NULL DEFAULT '-1',
+                              ADD CONSTRAINT num_detenciones_restrict
+                                CHECK (num_detenciones >= -1);
+                        </pre>
+                    </blockquote>
 
+                    <h2 style="text-align: center;">Descarga el formato CSV</h2>
+<div style="text-align: center;">
+    <a href="https://drive.google.com/drive/folders/1JGDS0WNvXlIMe4yxRojmzTLL8-_VKZag?usp=sharing" style="display: inline-block; padding: 10px 20px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px;">
+        Descarga formato .csv
+    </a>
+</div>
+
+                </div>
+    
+            </div>
+            
+           
             <div class="section-content production">
                 <h2>Consulta sobre los Datos</h2>
-                <div style="text-align: center;">
-                    <div style="border: 1px solid #ccc; padding: 10px; background-color: #f0f0f0; display: inline-block; text-align: left;">
-                        Aquí encontrará las Consultas de
-                    </div>
+                <div style="border: 2px solid #007BFF; border-radius: 5px; background-color: #E7F3FF; padding: 15px; color: #053d79; font-family: monospace; margin: 20px 0;">
+                    <h3>Consulta 1</h3>
+                    <p>¿Cuáles son las detenciones de mujeres, incluyendo la provincia, la tasa media de pobreza extrema y el tipo de infracción, agrupadas y ordenadas por la cantidad de infracciones?</p>
+                    <p>La consulta SQL selecciona y agrupa datos sobre detenciones de mujeres, incluyendo la provincia, la tasa media de pobreza extrema en esa provincia, el tipo de infracción cometida y la cantidad de veces que ocurrió cada infracción. Para lograr esto, se crean varias uniones (JOIN) entre las tablas “detenido”, “subcircuito”, “circuito”, “distrito”, “zona” y “provincia”, además de una subconsulta para enumerar diferentes infracciones. Los resultados se agrupan por provincia, tasa de pobreza extrema y tipo de infracción para incluir solo a mujeres detenidas. Finalmente, los datos se ordenan de manera descendente de acuerdo con la cantidad de infracciones.</p>
+                    <img src="header/images/consulta.jpg" alt="Descripción de la imagen" style="max-width: 100%; height: auto; margin-top: 10px;">
                 </div>
-            
-                <div class="analysis-content">
-                    <h2>Consulta SQL</h2>
-                    <div style="border: 2px solid #007BFF; border-radius: 5px; background-color: #E7F3FF; padding: 15px; color: #0056b3; font-family: monospace;">
-                        <pre>
-            %mysql
-            SELECT 
-                prov.nom_provincia AS provincia_o_zona,
-                prov.media_tasa_pobreza_extrema,
-                det.subinfraccion,
-                COUNT(subinfracciones.subinfraccion) AS num_ocurrencias
-            FROM
-                detenido de
-                JOIN
-                    detencion det ON de.id = det.Detenido_id
-                JOIN
-                    subcircuito sub ON det.Subcircuito_id_subcircuito = sub.id_subcircuito
-                JOIN
-                    circuito cir ON sub.Circuito_id_circuito = cir.id_circuito
-                JOIN
-                    distrito dis ON cir.Distrito_id_distrito = dis.id_distrito
-                JOIN
-                    zona zon ON dis.Zona_id_zona = zon.id_zona
-                JOIN
-                    provincia prov ON zon.id_zona = prov.zona_id_zona
-                JOIN
-                    (SELECT DISTINCT subinfraccion
-                     FROM detencion) AS subinfracciones ON det.subinfraccion = subinfracciones.subinfraccion
-            WHERE
-                de.sexo = 'MUJER'
-            GROUP BY 
-                prov.nom_provincia, prov.media_tasa_pobreza_extrema, det.subinfraccion
-            ORDER BY 
-                num_ocurrencias DESC;
-                        </pre>
-                    </div>
+
+                <div style="border: 2px solid #f8efb9; border-radius: 5px; background-color: #fffade; padding: 15px; color: #053d79; font-family: monospace; margin: 20px 0;">
+                    <h3>Consulta 2</h3>
+                    <p>¿Cuáles son las detenciones organizadas según la
+                        nacionalidad (‘COLOMBIANO’, ‘VENEZOLANO’,
+                        ‘ECUATORIANO’), el tipo de infracción, el porcentaje de
+                        prevalencia de cada infracción y la edad media de los
+                        detenidos?</p>
+                    <p>La consulta SQL elige y organiza los datos de las detenciones según la nacionalidad y el tipo de
+                        infracción cometida. Se establece el porcentaje de prevalencia de cada tipo de infracción y la edad
+                        media de los detenidos para cada nacionalidad (‘COLOMBIANO’, ‘VENEZOLANO’ y ‘ECUATORIANO’).
+                        La consulta une las tablas “detención”, “detenido” y “nacionalidad”, filtra los resultados para esas
+                        nacionalidades y organiza los datos según la nacionalidad y el tipo de infracción. Además, determina
+                        el porcentaje de incidencia de cada tipo de infracción en relación con el total de detenciones para
+                        esas nacionalidades y la edad promedio de los detenidos. Finalmente, los resultados se ordenan de
+                        manera descendente por nacionalidad y luego por porcentaje de incidencia.</p>
+                    <img src="header/images/consulta2.jpg" alt="Descripción de la imagen" style="max-width: 100%; height: auto; margin-top: 10px;">
                 </div>
-            
-                <div class="analysis-content">
-                    <h2>Descripción de la Consulta</h2>
-                    <p>
-                        La consulta SQL selecciona y agrupa datos sobre detenciones de mujeres, incluyendo la provincia, la tasa media de pobreza extrema en esa provincia, el tipo de infracción cometida y la cantidad de veces que ocurrió cada infracción. Para lograr esto, se crean varias uniones (JOIN) entre las tablas "detenido", "detención", "subcircuito", "circuito", "distrito", "zona" y "provincia", además de una subconsulta para enumerar diferentes infracciones. Los resultados se agrupan por provincia, tasa de pobreza extrema y tipo de infracción para incluir solo a mujeres detenidas. Finalmente, los datos se ordenan de manera descendente de acuerdo con la cantidad de infracciones.
-                    </p>
+
+                <div style="border: 2px solid #f8c5ec; border-radius: 5px; background-color: #ffdcf7; padding: 15px; color: #053d79; font-family: monospace; margin: 20px 0;">
+                    <h3>Consulta 3</h3>
+                    <p>¿Cuál es la distribución de detenciones de hombres por
+                        rango de edad en cada provincia, qué arma es la más
+                        común en cada subcircuito, y cómo se relacionan estos
+                        datos con la tasa de narcotráfico, lo que podría ayudar a
+                        entender mejor el contexto de la violencia y el crimen en
+                        diferentes regiones?</p>
+                    <p>Esta consulta SQL agrupa y analiza los datos de detenciones de hombres en varias provincias y los
+                        clasifica por edad y sexo. Cada subcircuito recibe información sobre la provincia, la tasa de tráfico de
+                        drogas y el arma más utilizada. Luego se cuentan las detenciones en cada grupo, lo que proporciona
+                        una visión detallada de cómo las tasas de narcotráfico se relacionan con las detenciones de hombres,
+                        diferenciadas por rangos de edad y tipos de armas en diferentes provincias. Para facilitar la
+                        interpretación, la consulta ordena los resultados por rangos de edad.</p>
+                    <img src="header/images/consulta3.jpg" alt="Descripción de la imagen" style="max-width: 100%; height: auto; margin-top: 10px;">
                 </div>
+
+                <div style="border: 2px solid #007BFF; border-radius: 5px; background-color: #E7F3FF; padding: 15px; color: #053d79; font-family: monospace; margin: 20px 0;">
+                    <h3>Consulta 4</h3>
+                    <p>¿Qué patrones se pueden identificar en la detención de
+                        hombres por rango de edad en cada provincia, cómo se
+                        relacionan estos patrones con la tasa de empleo
+                        inadecuado y la tasa de narcotráfico, y qué subinfracción
+                        es la más común, lo que puede ayudar a comprender
+                        mejor las dinámicas sociales y delictivas en cada región?</p>
+                    <p>Esta consulta SQL agrupa y analiza datos de detenciones de hombres en diversas provincias,
+                        clasificando por rango de edad y sexo. Se extrae la provincia, la tasa media de empleo inadecuado, la
+                        tasa de narcotráfico, y la subinfracción más común en cada subcircuito. Luego, se cuenta el número
+                        de detenciones en cada grupo, proporcionando una visión detallada de cómo las tasas de empleo
+                        inadecuado y narcotráfico se relacionan con las detenciones de hombres, diferenciadas por rangos de
+                        edad y tipos de delitos en distintas provincias.</p>
+                    <img src="header/images/consulta4.jpg" alt="Descripción de la imagen" style="max-width: 100%; height: auto; margin-top: 10px;">
+                </div>
+
+                <div style="border: 2px solid #007BFF; border-radius: 5px; background-color: #E7F3FF; padding: 15px; color: #053d79; font-family: monospace; margin: 20px 0;">
+                    <h3>Consulta 5</h3>
+                    <p>¿Qué relación existe entre la tasa de narcotráfico, el nivel
+                        educativo de la población y el número de detenciones
+                        por microtráfico en cada provincia, y cómo puede esta
+                        información ayudar a diseñar estrategias efectivas para
+                        combatir el crimen relacionado con drogas?</p>
+                    <p>Esta consulta SQL agrupa y analiza los datos de detenciones de drogas de diferentes provincias.
+                        Encuentra el nombre de la provincia, la tasa media de consumo de drogas y la tasa media de
+                        educación bachillerato de la población. Además, registra la cantidad de arrestos por infracciones de
+                        “SUSTANCIAS” o “MICROTRAFICO” en cada provincia. Los resultados se agrupan por provincia y sus
+                        respectivas tasas, y se ordenan de forma descendente según el número de detenciones por drogas.
+                        Esto proporciona una visión clara de la relación entre la incidencia del narcotráfico, el nivel educativo
+                        y las detenciones por drogas en cada provincia.</p>
+                    <img src="header/images/consulta5.jpg" alt="Descripción de la imagen" style="max-width: 100%; height: auto; margin-top: 10px;">
+                </div>
+
+                
             
 
             </div>
@@ -149,32 +473,22 @@
 
             <div class="section-content analysis">
                 <h2>Conclusiones y resultados</h2>
-    
-                <h>Preparación y Conversión de Datos</h>
-                <p>Utilizamos csvkit para convertir hojas de Excel a CSV y scripts de partición para manejar datos de múltiples años.</p>
+                <div style="border: 2px solid #f3f3f3; border-radius: 5px; background-color: #E7F3FF; padding: 15px; color: #0c3d72; font-family: monospace; margin: 20px 0;">
+                    <h3>Conclusión</h3>
+                    <p>El presente proyecto se ha centrado en unificar y analizar exhaustivamente múltiples fuentes de datos sobre detenciones desde 2016 hasta 2024. A través de la aplicación de diversas herramientas y tecnologías, se logró convertir, normalizar y unificar datos procedentes de distintos años y formatos en una estructura coherente y analizable. Este proceso abarcó:</p>
+                    <ul>
+                        <li><strong>Preparación y Conversión de Datos:</strong> Se utilizó csvkit para convertir hojas de Excel a CSV y scripts de partición para manejar datos de múltiples años.</li>
+                        <li><strong>Normalización de Esquemas:</strong> Se crearon y adaptaron esquemas específicos para asegurar consistencia en las columnas a lo largo de los diferentes años.</li>
+                        <li><strong>Procesamiento con Spark y Python:</strong> Se emplearon Spark y Scala para datos iniciales, y Python con Pandas para datos más recientes, garantizando limpieza y transformación de datos para compatibilidad.</li>
+                        <li><strong>Uso del Formato Parquet:</strong> Se implementó Parquet para almacenamiento eficiente y rápido acceso a los datos unificados.</li>
+                        <li><strong>Diseño Conceptual y Lógico:</strong> Se desarrolló un Modelo Entidad-Relación (E-R) transformado en un Modelo Relacional para estructurar la base de datos.</li>
+                        <li><strong>Generación e Implementación del Script DDL:</strong> Se creó un script SQL para implementar la base de datos en MySQL.</li>
+                        <li><strong>Preparación y Carga de Datos:</strong> Se importaron datos base y complementarios en la base de datos MySQL.</li>
+                        <li><strong>Generación de un Archivo CSV:</strong> Se creó un archivo CSV con todas las variables relevantes para análisis.</li>
+                    </ul>
+                    <p>El resultado obtenido es una base de datos MySQL completamente implementada y cargada con los datos finales, lista para análisis detallados. Esta base de datos facilitará la realización de análisis de tendencias, geográficos, demográficos y de correlación, proporcionando valiosos insights sobre las detenciones a lo largo de los años.</p>
+                </div>
                 
-                <h>Normalización de Esquemas</h>
-                <p>Creamos y adaptamos esquemas específicos para asegurar consistencia en las columnas a lo largo de los diferentes años.</p>
-                
-                <h>Procesamiento con Spark y Python</h>
-                <p>Empleamos Spark y Scala para datos iniciales, y Python con Pandas para datos más recientes, garantizando limpieza y transformación de datos para compatibilidad.</p>
-                
-                <h>Uso del Formato Parquet</h>
-                <p>Implementamos Parquet para almacenamiento eficiente y rápido acceso a los datos unificados.</p>
-                
-                <h>Diseño Conceptual y Lógico</h>
-                <p>Elaboramos un Modelo Entidad-Relación (E-R) y lo transformamos en un Modelo Relacional para estructurar la base de datos.</p>
-                
-                <h>Generación e Implementación del Script DDL</h>
-                <p>Desarrollamos un script SQL para implementar la base de datos en MySQL.</p>
-                
-                <h>Preparación y Carga de Datos</h>
-                <p>Preparamos y cargamos datos base y complementarios en la base de datos MySQL.</p>
-                
-                <h>Generación de un Archivo CSV</h>
-                <p>Creamos un archivo CSV con todas las variables relevantes para análisis.</p>
-                
-                <p>El resultado esperado es una base de datos MySQL completamente implementada y cargada con los datos finales, lista para realizar análisis detallados. Esta base de datos permitirá realizar análisis de tendencias, geográficos, demográficos y de correlación, proporcionando insights valiosos sobre las detenciones a lo largo de los años.</p>
             </div>
         </div>
     </div>

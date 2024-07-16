@@ -37,12 +37,257 @@
         <h3>Modelo Lógico</h3>
         <p>El modelo lógico representa cómo se implementará el modelo entidad-relación (ER) en términos de tablas y relaciones en una base de datos real.</p>
         <p>Este modelo transforma las entidades, atributos y relaciones del modelo ER en tablas y define las claves primarias y foráneas necesarias para mantener la integridad de los datos.</p>
+        <img src="header/images/modelologico.jpg" alt="Descripción de la imagen" style="max-width: 100%; height: auto; margin-top: 10px;">
     </section>
 
     <section>
         <h3>Diccionario de Datos</h3>
         <p>El diccionario de datos proporciona una descripción detallada de todas las tablas y campos definidos en el modelo lógico.</p>
         <p>Para cada tabla, se especifica el nombre, descripción y los tipos de datos de cada campo, junto con cualquier restricción adicional como claves primarias o foráneas.</p>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+            <thead>
+                <tr style="background-color: #007BFF; color: rgb(0, 0, 0);">
+                    <th style="border: 1px solid #ddd; padding: 8px;">Nombre del dato</th>
+                    <th style="border: 1px solid #ddd; padding: 8px;">Descripción</th>
+                    <th style="border: 1px solid #ddd; padding: 8px;">Tipo de dato</th>
+                    <th style="border: 1px solid #ddd; padding: 8px;">Año</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">edad</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Edad del detenido.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Int</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2016 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">sexo</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Sexo del detenido/a.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2016 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">genero</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Género del detenido/a.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2023 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">nacionalidad</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Procedencia del detenido/a.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2016 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">estado_civil</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Estado civil del detenido/a.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2023 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">nivel_instruccion</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Nivel de educación del detenido/a.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2023 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">estatus_migratorio</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Estatus migratorio del detenido/a.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2023 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">num_detenciones</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Número total de detenciones del detenido.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Int</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2022 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">autoidentificacion_etnica</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Autoidentificación étnica del detenido/a.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2022 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">codigo_iccs</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Número de serie o identificador único e internacional que aparece en la tarjeta SIM del detenido/a.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2023 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">fecha_detencion</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Fecha en la que ocurrió la aprehensión/detención.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Date</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2016 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">hora_detencion</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Hora en la que ocurrió la aprehensión/detención.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Time</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2022 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">tipo</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Indica si la persona es aprehendida/detenida.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2022 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">condicion</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Estado del aprehendido/detenido.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2023 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">movilizacion</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Indica cómo se transportaba la persona en el momento de la aprehensión/detención.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2023 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">presunta_flagrancia</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Si se encontró flagrantemente al aprehendido/detenido.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2022 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">presunta_modalidad</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Indica la forma en la que la persona cometió la infracción o la ley que incumplió.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2023 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">flagrante_boleta</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Indica si la aprehensión/detención de la persona es de tipo flagrante o boleta.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2016 – 2018</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">arma</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Indica el arma que se usó para cometer el crimen.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2023 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">tipo_arma</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Indica de qué tipo es el arma que se usó para cometer el crimen.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2023 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">infraccion</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Indica la infracción que se cometió de forma general.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2022 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">subinfraccion</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Indica la sub-infracción de forma más detallada.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2016 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">codigo_provincia</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Describe el código de la provincia donde ocurrió la detención/aprehensión.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Int</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2023 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">nombre_provincia</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Describe el nombre de la provincia donde ocurrió la detención/aprehensión.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2022 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">codigo_canton</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Describe el código del cantón donde ocurrió la detención/aprehensión.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2023 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">nombre_canton</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Describe el nombre del cantón donde ocurrió la detención/aprehensión.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2016 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">codigo_parroquia</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Describe el código de la parroquia donde ocurrió la detención/aprehensión.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2023 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">nombre_parroquia</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Describe el nombre de la parroquia donde ocurrió la detención/aprehensión.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2022 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">nombre_zona</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Describe el nombre de la zona donde ocurrió la detención/aprehensión.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2016 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">nombre_subzona</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Describe el nombre de la subzona donde ocurrió la detención/aprehensión.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2016 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">codigo_distrito</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Describe el código del distrito donde ocurrió la detención/aprehensión.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2022 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">nombre_distrito</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Describe el nombre del distrito donde ocurrió la detención/aprehensión.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2022 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">codigo_circuito</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Describe el código del circuito donde ocurrió la detención/aprehensión.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2022 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">nombre_circuito</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Describe el nombre del circuito donde ocurrió la detención/aprehensión.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2022 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">codigo_subcircuito</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Describe el código del subcircuito donde ocurrió la detención/aprehensión.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2022 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">nombre_subcircuito</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Describe el nombre del subcircuito donde ocurrió la detención/aprehensión.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2022 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">lugar</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Describe el lugar donde ocurrió la detención/aprehensión de forma más específica.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2022 – 2024</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">tipo_lugar</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Clasifica el lugar donde ocurrió la detención/aprehensión de forma más específica.</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Cadena/String</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">2023 – 2024</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        
+    
     </section>
 
     <section>
