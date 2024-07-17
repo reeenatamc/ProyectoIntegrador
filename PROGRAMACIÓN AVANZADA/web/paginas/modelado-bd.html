@@ -24,6 +24,39 @@
             identificación y definición de entidades y las relaciones entre ellas.</p>
         <p>Incluye un diagrama ER que muestra las entidades principales, sus atributos y cómo están conectadas a través
             de relaciones.</p>
+
+            <p>Este diagrama es un modelo de Entidad-Relación (ER) que representa una base de datos sobre detenciones. Aquí tienes una breve descripción de sus principales componentes y relaciones:
+
+                Detenido: Información sobre los detenidos, incluyendo detalles personales como nacionalidad, edad, estado civil, y género.
+                Detención: Registra los eventos de detención, incluyendo fecha, hora, y condiciones de la detención.
+                Infracción: Detalles sobre las infracciones cometidas por los detenidos.
+                Arma: Información sobre las armas involucradas en las detenciones.
+                Lugar: Datos sobre los lugares donde ocurrieron las detenciones.
+                Parroquia, Cantón, Provincia: Jerarquía geográfica de los lugares.
+                Zona, SubZona, Circuito, SubCircuito, Distrito: División de las áreas geográficas.
+                
+            </p>
+            
+            <p> Las entidades están relacionadas entre sí mediante llaves foráneas y relaciones que indican cómo se conectan los datos de cada tabla</p>
+            
+            <style>
+                a {
+                    color: rgb(12, 119, 190);
+                }
+            </style>
+            
+            <p>
+                Para ver el diagrama ER del detenciones, haz clic en el siguiente enlace: 
+                <a href="archivos/svg/modelo-er.svg" target="_blank">Diagrama ER Detenciones</a>
+            </p>
+            
+
+
+            
+
+
+            
+
         <div class="img-contenedor" id="img-contenedor">
             <img id="img" src="archivos/svg/modelo-er.svg" alt="Diagrama ER">
         </div>
@@ -33,12 +66,41 @@
         </div>
     </section>
 
-    <section>
+    <style>
+        .cuadro {
+            border: 2px solid #525151f6; /* Color y grosor del borde */
+            padding: 15px; /* Espaciado interno */
+            border-radius: 8px; /* Bordes redondeados */
+            margin: 20px; /* Espaciado externo */
+        }
+    </style>
+    
+    <section class="cuadro">
         <h3>Modelo Lógico</h3>
         <p>El modelo lógico representa cómo se implementará el modelo entidad-relación (ER) en términos de tablas y relaciones en una base de datos real.</p>
         <p>Este modelo transforma las entidades, atributos y relaciones del modelo ER en tablas y define las claves primarias y foráneas necesarias para mantener la integridad de los datos.</p>
+        
+        <p>
+            Este diagrama es un modelo lógico de base de datos que muestra las tablas y sus relaciones en un sistema de registro de detenciones.
+        </p>
+        
+        <p>
+            <strong>Tablas principales:</strong><br>
+            detenido: Información sobre los detenidos.<br>
+            detencion: Detalles de las detenciones.<br>
+            nacionalidad: Nacionalidades de los detenidos.<br>
+            subcircuito: Información sobre subcircuitos geográficos.<br>
+            parroquia, canton, provincia: Niveles geográficos de ubicación.
+        </p>
+        
+        <p>
+            <strong>Relaciones:</strong><br>
+            Las líneas punteadas muestran cómo las tablas están conectadas, indicando las relaciones entre los datos. Este modelo organiza la información de manera estructurada para gestionar los datos de detenciones.
+        </p>
+    
         <img src="header/images/modelologico.jpg" alt="Descripción de la imagen" style="max-width: 100%; height: auto; margin-top: 10px;">
     </section>
+    
 
     <section>
         <h3>Diccionario de Datos</h3>

@@ -26,14 +26,26 @@
         <title>Violencia y Criminalidad en Ecuador</title>
         
     </head>
-    <body>
-        <h1 class = "main-title">La violencia y la criminalidad en Ecuador</h1>
-        <p class = "main-text">
-            Están aumentando a un ritmo sin precedentes. No solo se encuentra entre los diez países más violentos del mundo, 
-            sino que también tiene la tasa más alta de muertes violentas en América Latina, con 47,25% por cada 100 000 habitantes, lo que representa ocho veces más que en 2016, cuando experimentó su tasa más baja desde 1980. Durante menos de diez años, ha cambiado de ser el segundo país más seguro de América del Sur, después de Chile, a ser el más violento. (OECO, 2024)
-        </p>
-        <img class = "imagen" src="header/images/portadaEcuador.jpg" alt="Imagen relacionada" />
-    </body>
+    <div class="cuadro">
+        <body>
+            <h1 class = "main-title">La violencia y la criminalidad en Ecuador</h1>
+            <b> </b>
+            <b> </b>
+            <p class = "main-text">
+                Están aumentando a un ritmo sin precedentes. No solo se encuentra entre los diez países más violentos del mundo, 
+                sino que también tiene la tasa más alta de muertes violentas en América Latina, con 47,25% por cada 100 000 habitantes, lo que representa ocho veces más que en 2016, cuando experimentó su tasa más baja desde 1980. Durante menos de diez años, ha cambiado de ser el segundo país más seguro de América del Sur, después de Chile, a ser el más violento. (OECO, 2024)
+            </p>
+            <img class = "imagen" src="header/images/portadaEcuador.jpg" alt="Imagen relacionada" />
+            <p> </p>
+            <p> </p>
+            <br> 
+            <br> 
+            
+        </body>
+
+    </div>
+       
+    
     <h1>Proceso</h1>
     <br>
     <div class="process-wrapper">
@@ -77,14 +89,75 @@
                         
                     </div>
                 </div>
-                <div class="analysis-content">
-                    <h2>Limpieza de los datos</h2>
-                    <p>La limpieza de datos es un paso crítico y 
-                        fundamental para garantizar la calidad y la integridad de los datos utilizados en cualquier
-                        proyecto. Este proceso implica la identificación y corrección de errores, la eliminación 
-                        de datos duplicados o irrelevantes, y la garantía de que los datos sean consistentes y estén completos. En nuestro proyecto, que abarca la recopilación y análisis de datos de detenidos desde 2016 hasta 2024, la limpieza de datos es esencial para obtener resultados precisos y fiables.
+                
+                <div class="cuadrop">
+                    <div class="analysis-content">
+                        <h3>Limpieza de los datos</h3>
+                        <p>La limpieza de datos es un paso crítico y 
+                            fundamental para garantizar la calidad y la integridad de los datos utilizados en cualquier
+                            proyecto. Este proceso implica la identificación y corrección de errores, la eliminación 
+                            de datos duplicados o irrelevantes, y la garantía de que los datos sean consistentes y estén completos. En nuestro proyecto, que abarca la recopilación y análisis de datos de detenidos desde 2016 hasta 2024, la limpieza de datos es esencial para obtener resultados precisos y fiables.
+                        </p>
+                        
+    
+                        
+                    </div>
+
+
+                    <h2>limpieza del Canton</h2>
+                    <p>
+                        Para limpiar los datos de cantones y provincias, hemos utilizado expresiones regulares. Una expresión regular es una secuencia de caracteres que define un patrón de búsqueda, permitiéndonos identificar y manipular cadenas de texto que contienen ciertos caracteres específicos. Esto nos ha facilitado la tarea de encontrar coincidencias en los datos y asegurar que estén en el formato adecuado.
                     </p>
+                    <p>
+                        La expresión regular <code>\w*[^\x00-\x7FáéíóúÁÉÍÓÚñÑüÜ]+\w*</code> es un patrón que busca coincidencias en cadenas de texto que contengan ciertos caracteres específicos. Aquí te explico cada parte de la expresión:
+                    </p>
+                    <p>
+                        <strong>\w*</strong>: Esto coincide con cero o más caracteres de palabra. Los caracteres de palabra incluyen letras (mayúsculas y minúsculas), dígitos y guiones bajos (_).
+                    </p>
+                    <p>
+                        <strong>[^\x00-\x7FáéíóúÁÉÍÓÚñÑüÜ]+</strong>: Esta parte define un conjunto negado ([^…]) que busca cualquier carácter que no esté en el rango de caracteres especificado. Aquí tenemos dos rangos:
+                    </p>
+                    <p>
+                        <strong>\x00-\x7F</strong>: Representa todos los caracteres ASCII estándar, es decir, los caracteres con códigos hexadecimales desde 00 hasta 7F. Esto cubre la mayoría de los caracteres básicos del inglés y otros idiomas.
+                    </p>
+                    
+                    <pre>
+                  
+                    </pre>
                 </div>
+                <style>
+                    .cuadrop {
+                        border: 2px solid #0d72a1; /* Color y grosor del borde */
+                        padding: 15px; /* Espaciado interno */
+                        border-radius: 8px; /* Bordes redondeados */
+                        margin: 20px; /* Espaciado externo */
+                        background-color: #f9f9f9c7; /* Color de fondo */
+                    }
+                    .codigo {
+                        text-align: left; /* Alinear el texto a la derecha */
+                        font-family: monospace; /* Fuente monoespaciada para el código */
+                    }
+                </style>
+                
+                <section>
+                    <div class="cuadrop">
+                        <h3>
+                            Aquí tienes el código que utilizamos para filtrar los datos:
+                        </h3>
+                       
+                            <iframe src="https://codekeep.io/embed/?sid=limpieza" frameBorder="0"  style="width: 100%; max-width:800px;height:
+                            450px; border:0; transform: scale(1); overflow:hidden;"
+                            sandbox="allow-scripts allow-same-origin"> 
+                            </iframe>
+
+                            <br>
+                            Este código en Spark filtra y organiza los datos de la columna <code>nombre_canton</code> en un DataFrame. Selecciona solo los nombres que contienen caracteres permitidos (alfanuméricos, espacios y letras con acentos), elimina duplicados, y luego ordena los resultados alfabéticamente para mostrarlos.
+                    </div>
+
+        
+                </section>
+
+
                 <h2> Descripción de los datos complementarios</h2>
                 <table>
                     <thead>
