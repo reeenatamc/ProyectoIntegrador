@@ -139,7 +139,7 @@ h1 {
 	margin: auto;
 	background: white;
 	border-radius: 4px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), /* Sombra suave */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 
                 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -207,18 +207,33 @@ h1 {
 .imagen {
 	display: block;
 	margin: 0 auto;
-	width: 50%;
+	width: 70%;
 	max-width: 300px;
-	}
+	transition: transform 0.3s ease; 
+}
 			
-	.main-title {
-		font-size: 48px;
-		margin-bottom: 20px;
-		color: white;
-		width: 30%;
-		line-height: 1.5;
-		letter-spacing: 0.2px;
-	}
+.main-title {
+	font-size: 48px;
+	margin-bottom: 20px;
+	color: white;
+	width: 30%;
+	line-height: 1.5;
+	letter-spacing: 0.2px;
+}
+.main-title-2 {
+	font-size: 48px;
+	margin-bottom: 30px;
+	color: black;
+	width: 30%;
+	line-height: 1.5;
+	letter-spacing: 0.2px;
+	margin-top: 20px;
+}
+
+.highlight {
+    color: #f39c12; 
+    font-weight: bold; 
+}
 	
 			
 .main-text {
@@ -226,6 +241,9 @@ h1 {
 	line-height: 1.5;
 	width: 85%;
 	text-align: justify;
+	padding: 0;
+	padding-bottom: 15px;
+	margin: 0;
 }
 
 
@@ -236,7 +254,9 @@ h1 {
     align-items: center; 
     justify-content: center; 
     width: 65%;
-    padding: 15px;
+    padding-top: 50px;
+	padding-bottom: 50px;
+
     background-color: rgba(255, 255, 255, 0.8); 
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 
@@ -270,11 +290,45 @@ h1 {
 	display: flex;
 
 }
+.cuadro-2{
+	text-align: center;
+}
+
+.contenedor-imagen {
+    position: relative; 
+
+}
 .contenedor-materias{
 	display: flex;
 	background-color: white;
 	padding: 15px;
-	gap: 10px;
+	gap: 50px;
+	border-radius: 5px;
+	width: 80%;
+	height: 200px;
+	justify-content: center;
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    top: 110%; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px; 
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.contenedor-imagen:hover .popup {
+    display: block;
+}
+.contenedor-imagen:hover .imagen {
+    transform: scale(1.2); 
 }
 
 	

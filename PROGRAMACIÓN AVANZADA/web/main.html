@@ -43,16 +43,28 @@
                 públicas, la mejora de estrategias de seguridad y el desarrollo de programas de rehabilitación.
             </p>
             <div class="contenedor-materias">
-                <img class="imagen" src="archivos\svg\nuevo_ecuador.png" alt="Imagen relacionada" />
-                <img class="imagen" src="archivos\svg\prog_ecu.png" alt="Imagen relacionada" />
+                <div class="contenedor-imagen">
+                    <img class="imagen" src="archivos\svg\nuevo_ecuador-removebg.png" alt="Imagen relacionada" />
+                    <div class="popup">
+                        <p>Base de Datos: Modelado y carga de la base de datos.</p>
+                    </div>
+                </div>
+                <div class="contenedor-imagen">
+                    <img class="imagen" src="archivos\svg\prog_ecu-removebg-preview.png" alt="Imagen relacionada" />
+                    <div class="popup">
+                        <p>Programacion: Análisis y tratamiento de los datos.</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <h1 class="main-title">Base de Datos de detenidos de los años 2016 a 2024</h1>
+        <h1 class="main-title">
+            Base de Datos de <span class="highlight">detenidos</span> de los años <span class="highlight">2016</span> a<span class="highlight"> 2024</span>
+        </h1>
+        
     </div>
 
     <div class = "cuadro-2">
-        <h1>Proceso</h1>
-        
+        <h1 class="main-title-2">Proceso</h1>
         <div class="process-wrapper">
             <div id="progress-bar-container">
                 <ul>
@@ -112,45 +124,7 @@
                                 y
                                 fiables.
                             </p>
-
-
-
                         </div>
-
-
-                        <h2>limpieza del Canton</h2>
-                        <p>
-                            Para limpiar los datos de cantones y provincias, hemos utilizado expresiones regulares. Una
-                            expresión regular es una secuencia de caracteres que define un patrón de búsqueda,
-                            permitiéndonos identificar y manipular cadenas de texto que contienen ciertos caracteres
-                            específicos. Esto nos ha facilitado la tarea de encontrar coincidencias en los datos y
-                            asegurar
-                            que estén en el formato adecuado.
-                        </p>
-                        <p>
-                            La expresión regular <code>\w*[^\x00-\x7FáéíóúÁÉÍÓÚñÑüÜ]+\w*</code> es un patrón que busca
-                            coincidencias en cadenas de texto que contengan ciertos caracteres específicos. Aquí te
-                            explico
-                            cada parte de la expresión:
-                        </p>
-                        <p>
-                            <strong>\w*</strong>: Esto coincide con cero o más caracteres de palabra. Los caracteres de
-                            palabra incluyen letras (mayúsculas y minúsculas), dígitos y guiones bajos (_).
-                        </p>
-                        <p>
-                            <strong>[^\x00-\x7FáéíóúÁÉÍÓÚñÑüÜ]+</strong>: Esta parte define un conjunto negado ([^…])
-                            que
-                            busca cualquier carácter que no esté en el rango de caracteres especificado. Aquí tenemos
-                            dos
-                            rangos:
-                        </p>
-                        <p>
-                            <strong>\x00-\x7F</strong>: Representa todos los caracteres ASCII estándar, es decir, los
-                            caracteres con códigos hexadecimales desde 00 hasta 7F. Esto cubre la mayoría de los
-                            caracteres
-                            básicos del inglés y otros idiomas.
-                        </p>
-
                         <pre>
 
                     </pre>

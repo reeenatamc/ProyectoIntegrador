@@ -1,9 +1,9 @@
 table {
     width: 700px;
     margin: 40px auto;
-    border-collapse: collapse; 
     border-spacing: 0; 
     border-radius: 10px; 
+    border: 2px solid #a8dadc;
 }
 
 th, td {
