@@ -10,7 +10,7 @@ function zoomIn() {
     if (scale < maxScale) {
         scale += step;
         img.style.transform = 'scale(' + scale + ')';
-        img.style.cursor = 'move'; // Cambia el cursor a 'move' para indicar que se puede arrastrar la imagen
+        img.style.cursor = 'move'; 
     }
 }
 
@@ -18,7 +18,7 @@ function zoomOut() {
     if (scale > minScale) {
         scale -= step;
         img.style.transform = 'scale(' + scale + ')';
-        img.style.cursor = 'move'; // Cambia el cursor a 'move' para indicar que se puede arrastrar la imagen
+        img.style.cursor = 'move'; 
     }
 }
 

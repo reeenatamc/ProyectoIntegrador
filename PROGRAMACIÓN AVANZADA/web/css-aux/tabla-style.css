@@ -1,32 +1,24 @@
 table {
     width: 700px;
     margin: 40px auto;
-    border-collapse: separate; 
+    border-collapse: collapse; 
     border-spacing: 0; 
-    border: 0.5px solid #ddd;
-}
-
-table {
     border-radius: 10px; 
 }
+
 th, td {
-    border: 0.5px solid #ddd;
     padding: 8px;
-
 }
-
-
 
 th {
-    background-color: #ddf092;
+    background-color: #a8dadc;
     font-size: 16px;
     text-align: center;
-
 }
-td{
+
+td {
     font-size: 12px;
     text-align: justify;
-
 }
 
 td:nth-child(1) {
@@ -35,7 +27,6 @@ td:nth-child(1) {
     overflow: hidden; 
     text-overflow: ellipsis; 
     text-align: center;
-
 }
 
 td:nth-child(2) {
@@ -51,13 +42,12 @@ td:nth-child(3) {
     overflow: hidden; 
     text-overflow: ellipsis; 
     text-align: center;
-
 }
+
 td:nth-child(4) {
     width: 50px; 
     max-width: 150px; 
     overflow: hidden;
     text-overflow: ellipsis; 
     text-align: center;
-
 }
