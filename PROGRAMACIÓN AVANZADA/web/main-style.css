@@ -13,6 +13,8 @@ h1 {
 	text-transform:uppercase;
 	letter-spacing:4px;
 	line-height:23px;
+	margin-right: 30px;
+
 }
 
 
@@ -209,11 +211,15 @@ h1 {
 	max-width: 300px;
 	}
 			
-.main-title {
-	font-size: 32px;
-	margin-bottom: 20px;
-	color: white;
+	.main-title {
+		font-size: 48px;
+		margin-bottom: 20px;
+		color: white;
+		width: 30%;
+		line-height: 1.5;
+		letter-spacing: 0.2px;
 	}
+	
 			
 .main-text {
 	font-size: 18px;
@@ -221,29 +227,23 @@ h1 {
 	width: 85%;
 	text-align: justify;
 }
-.cuadro-texto{
-}
-.cuadro1 {
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
-    height: 100vh; 
-    text-align: center; 
-}
+
+
 
 .cuadro-texto {
     display: flex;
     flex-direction: column; 
     align-items: center; 
     justify-content: center; 
-    width: 60%;
+    width: 65%;
     padding: 15px;
-	background-color: white;
+    background-color: rgba(255, 255, 255, 0.8); 
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 
                 0 6px 20px rgba(0, 0, 0, 0.1); 
+    margin-left: 30px;
 }
+
 
 .contenedor-general {
 	width: 100%;
@@ -254,7 +254,7 @@ h1 {
 	
 .cuadro-1, .cuadro-2 {
 	width: 100%;
-	height: 100vh;
+	height: 92vh;
 	align-items: center;
 	justify-content: center;
 	gap: 50px;
@@ -267,6 +267,14 @@ h1 {
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
+	display: flex;
+
+}
+.contenedor-materias{
+	display: flex;
+	background-color: white;
+	padding: 15px;
+	gap: 10px;
 }
 
 	
