@@ -1,0 +1,5 @@
+﻿Tabla,Campo,Restricción específica de dominio,Valor por defecto
+detencion,tipo,"Solo los valores de “DETENIDO”, “APREHENDIDO” y “SIN DATO”.",“SIN DATO”
+detencion,flagrante_boleta,"Solo los valores de “FLAGRANTE”, “BOLETA” y “SIN DATO”.",“SIN DATO”
+detencion,presunta_flagrancia,"Solo los valores de “SI”, “NO” y “SIN DATO”.",“SIN DATO”
+detenido,num_detenciones,"Valores mayores o iguales a 0, se usará “-1” para indicar “SIN DATO”.",-1

@@ -79,7 +79,7 @@ h1 {
 	position:absolute;
 	width:100%;
 	bottom:0;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 #progress-bar-container li.active, #progress-bar-container li:hover {
@@ -211,6 +211,9 @@ h1 {
 	max-width: 300px;
 	transition: transform 0.3s ease; 
 }
+.consulta{
+	width: 75%;
+}
 			
 .main-title {
 	font-size: 48px;
@@ -269,28 +272,31 @@ h1 {
 	width: 100%;
 	height: 100vh;
 	overflow-y: scroll;
-	scroll-snap-type: y mandatory;
 }
 	
-.cuadro-1, .cuadro-2 {
+
+.cuadro-1 {
 	width: 100%;
 	height: 92vh;
 	align-items: center;
 	justify-content: center;
 	gap: 50px;
 	color: black;
-	scroll-snap-align: start;
-}
-
-.cuadro-1 {
-    background-image: url('archivos/svg/close-up-hand-wearing-cuffs-jail.jpg');
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
+	background-image: url('archivos/svg/close-up-hand-wearing-cuffs-jail.jpg');
+	background-size: cover; 
+	background-position: center; 
+	background-repeat: no-repeat; 
 	display: flex;
-
+	scroll-snap-align: start;
+	scroll-snap-type: y mandatory; /* Solo aplicamos scroll-snap aquí */
 }
-.cuadro-2{
+.cuadro-2 {
+	width: 100%;
+	height: 92vh;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+	color: black;
 	text-align: center;
 }
 
@@ -300,13 +306,17 @@ h1 {
 }
 .contenedor-materias{
 	display: flex;
-	background-color: white;
+	background-color: transparent;
 	padding: 15px;
 	gap: 50px;
 	border-radius: 5px;
 	width: 80%;
 	height: 200px;
 	justify-content: center;
+}
+.img-contenedor-2 {
+    
+    border: 2px solid #ccc;
 }
 
 .popup {
