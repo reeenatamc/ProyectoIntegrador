@@ -515,6 +515,22 @@
                             <h5>
                                 Gráfico
                             </h5>
+                            <h1>Zeppelin Paragraph Embed</h1>
+                            <iframe src="http://localhost:8080/#/notebook/2K4MZ1B82/paragraph/paragraph_1721882910052_2054630163?asIframe"
+                                id="zeppelinFrame"></iframe>
+                            
+                            <script>
+                                // Función para actualizar el iframe
+                                function updateIframe() {
+                                    var iframe = document.getElementById('zeppelinFrame');
+                                    var src = iframe.src;
+                                    iframe.src = ''; // Resetear el src
+                                    iframe.src = src; // Volver a asignar el src para recargar el iframe
+                                }
+
+                                // Actualizar el iframe cada 5 minutos (300000 ms)
+                                setInterval(updateIframe, 300000);
+                            </script>
                             <img class = "consulta" src="archivos\svg\grafico4.jpg" alt="Descripción de la imagen">
                         </div>
 
