@@ -249,7 +249,10 @@ h1 {
 	margin: 0;
 }
 
-
+.grafico{
+	width: 80%;
+	height: 450px;
+}
 
 .cuadro-texto {
     display: flex;
